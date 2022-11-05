@@ -39,16 +39,24 @@
                 <input asp-for="DeskQuote.DateAdded" class="form-control" />
                 <span asp-validation-for="DeskQuote.DateAdded" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.Material" class="control-label"></label>
-                <select asp-for="DeskQuote.Material" class="form-control"></select>
-                <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DeskQuote.ProductionTime" class="control-label"></label>
-                <select asp-for="DeskQuote.ProductionTime" class="form-control"></select>
-                <span asp-validation-for="DeskQuote.ProductionTime" class="text-danger"></span>
-            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label asp-for="DeskQuote.Material" class="control-label"></label>
+                    <select asp-for="DeskQuote.Material" class="form-control" asp-items="Html.GetEnumSelectList<SurfaceMaterial>()">
+                        <option selected="selected" value="">Please select</option>
+                    </select>
+                    <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="DeskQuote.ProductionTime" class="control-label"></label>
+                    <select asp-for="DeskQuote.ProductionTime" class="form-control">
+                        <option selected="selected" value="0">3 Days</option>
+                        <option selected="selected" value="1">5 Days</option>
+                        <option selected="selected" value="2">7 Days</option>
+                        <option selected="selected" value="14">14 Days</option>
+                    </select>
+                    <span asp-validation-for="DeskQuote.ProductionTime" class="text-danger"></span>
+                </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
