@@ -18,7 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\" />
+    <Folder Include="wwwroot\Assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Assets\laminate.jpg" />
+    <None Include="wwwroot\Assets\oak.jpg" />
+    <None Include="wwwroot\Assets\pine.jpg" />
+    <None Include="wwwroot\Assets\rosewood.jpg" />
+    <None Include="wwwroot\Assets\veneer.jpg" />
   </ItemGroup>
 
 </Project>
