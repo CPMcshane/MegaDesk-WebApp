@@ -45,19 +45,25 @@
                 </select>
                 <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
             </div>
+            <div class="surface-img-group">
+                <img src="../Assets/oak.jpg" alt="Oak" />
+                <img src="../Assets/laminate.jpg" alt="Laminate" />
+                <img src="../Assets/pine.jpg" alt="Pine" />
+                <img src="../Assets/rosewood.jpg" alt="Rosewood" />
+                <img src="../Assets/veneer.jpg" alt="Veneer" />
+            </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.ProductionTime" class="control-label"></label>
                 <select asp-for="DeskQuote.ProductionTime" class="form-control">
-                    <option selected="selected" value="">Please select</option>
-                    <option selected="selected" value="3">3 Days</option>
-                    <option selected="selected" value="5">5 Days</option>
-                    <option selected="selected" value="7">7 Days</option>
+                    <option selected="selected" value="0">3 Days</option>
+                    <option selected="selected" value="1">5 Days</option>
+                    <option selected="selected" value="2">7 Days</option>
                     <option selected="selected" value="14">14 Days</option>
                 </select>
                 <span asp-validation-for="DeskQuote.ProductionTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary"/>
             </div>
         </form>
     </div>
@@ -70,3 +76,5 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+
+

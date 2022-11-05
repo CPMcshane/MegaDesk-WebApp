@@ -41,5 +41,10 @@ namespace MegaDesk_WebApp.Pages.DeskQuotes
 
             return RedirectToPage("./Index");
         }
+
+        public void CreateClick()
+        {
+
+        }
     }
 }
