@@ -10,6 +10,19 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<form>
+    <p>
+        Customer Name: <input type="text" asp-for="SearchString" />
+    </p>
+    <p>Order By
+        <select asp-for="entry">
+            <option value="">all</option>
+            <option value="name">Name</option>
+            <option value="date">Date</option>
+        </select>
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <thead>
         <tr>
