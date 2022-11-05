@@ -30,7 +30,7 @@ namespace MegaDesk_WebApp.Models
         [Display(Name = "Surface Material")]
         public SurfaceMaterial Material { get; set; }
 
-        [Display(Name = "Production Time")]
+        [Display(Name = "Production Days")]
         public int ProductionTime { get; set; }
 
         [DataType(DataType.Currency)]
@@ -69,6 +69,23 @@ namespace MegaDesk_WebApp.Models
             // Determines the production cost based on production
             // time and size of the desk
             int rushOrderCost = 0;
+            int ProductionTimeIndex;
+            switch (ProductionTime) 
+            {
+                case 3:
+                    ProductionTimeIndex = 0;
+                    break;
+                case 5:
+                    ProductionTimeIndex = 1;
+                    break;
+                case 7:
+                    ProductionTimeIndex = 2;
+                    break;
+                default :
+                    ProductionTimeIndex = 0;
+                    break;
+            }
+
             if (this.ProductionTime != 14)
             {
                 int sizeOfDeskIndex;
@@ -76,7 +93,7 @@ namespace MegaDesk_WebApp.Models
                 else if (area > 2000) sizeOfDeskIndex = 2;
                 else sizeOfDeskIndex = 1;
 
-                rushOrderCost = rushOrderCostTable[ProductionTime, sizeOfDeskIndex];
+                rushOrderCost = rushOrderCostTable[ProductionTimeIndex, sizeOfDeskIndex];
             }
 
             float totalCost = baseCost
@@ -112,3 +129,5 @@ public enum SurfaceMaterial
     Rosewood,
     Veneer
 }
+
+
