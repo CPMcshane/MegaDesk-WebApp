@@ -1,5 +1,37 @@
+@font-face {
+    font-family: 'Source Serif Pro';
+    src: url('../fonts/SourceSerifPro-Regular.ttf');
+}
+@font-face {
+    font-family: 'Albert Sans';
+    src: url('../fonts/AlbertSans-VariableFont_wght.ttf');
+}
+
+
+body, html, header {
+    margin: 0;
+    width: 100%;
+}
 html {
-  font-size: 14px;
+    font-size: 14px;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+
+header, h1, h2, h3, h4 {
+    font-family: 'Source Serif Pro';
+}
+
+p, label, button {
+    font-family: 'Albert Sans';
 }
 
 @media (min-width: 768px) {
@@ -15,4 +47,31 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+
+
+/* CREATE PAGE FORM */
+form {
+    filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
+    border: 1px solid darkgrey;
+    padding: 5%;
+}
+
+.form-row {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+
+/* EDIT PAGE FORM */
+
+
+/* DETAILS PAGE */
+.details-title {
+    text-decoration: underline;
 }

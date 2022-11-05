@@ -5,59 +5,71 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>Quote Details</h1>
 
 <div>
-    <h4>DeskQuote</h4>
+    
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 details-title">
             @Html.DisplayNameFor(model => model.DeskQuote.CustomerName)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-2">
             @Html.DisplayFor(model => model.DeskQuote.CustomerName)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Width)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Width)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Depth)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Depth)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.DeskQuote.Drawers)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.DeskQuote.Drawers)
-        </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 details-title">
             @Html.DisplayNameFor(model => model.DeskQuote.DateAdded)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-2">
             @Html.DisplayFor(model => model.DeskQuote.DateAdded)
         </dd>
-        <dt class="col-sm-2">
+    </dl>
+
+    <dl class="row">
+        <dt class="col-sm-1 details-title">
+            @Html.DisplayNameFor(model => model.DeskQuote.Width)
+        </dt>
+        <dd class="col-sm-3">
+            @Html.DisplayFor(model => model.DeskQuote.Width)
+        </dd>
+        <dt class="col-sm-1 details-title">
+            @Html.DisplayNameFor(model => model.DeskQuote.Depth)
+        </dt>
+        <dd class="col-sm-3">
+            @Html.DisplayFor(model => model.DeskQuote.Depth)
+        </dd>
+        <dt class="col-sm-1 details-title">
+            @Html.DisplayNameFor(model => model.DeskQuote.Drawers)
+        </dt>
+        <dd class="col-sm-3">
+            @Html.DisplayFor(model => model.DeskQuote.Drawers)
+        </dd>
+    </dl>
+    
+    <dl class="row">
+        <dt class="col-sm-2 details-title">
             @Html.DisplayNameFor(model => model.DeskQuote.Material)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-2">
             @Html.DisplayFor(model => model.DeskQuote.Material)
         </dd>
-        <dt class="col-sm-2">
+        <dt class="col-sm-2 details-title">
             @Html.DisplayNameFor(model => model.DeskQuote.ProductionTime)
         </dt>
-        <dd class="col-sm-10">
+        <dd class="col-sm-2">
             @Html.DisplayFor(model => model.DeskQuote.ProductionTime)
         </dd>
-        <dd class="col-sm-2">
+    </dl>
+
+    <dl class="row">
+        <dd class="col-sm-1">
             @Html.DisplayFor(model => model.DeskQuote.Price)
         </dd>
     </dl>
 </div>
+
+<hr />
+
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.DeskQuote?.id">Edit</a> |
     <a asp-page="./Index">Back to List</a>
