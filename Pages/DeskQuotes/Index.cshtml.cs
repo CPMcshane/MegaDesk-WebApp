@@ -20,13 +20,36 @@ namespace MegaDesk_WebApp.Pages.DeskQuotes
         }
 
         public IList<DeskQuote> DeskQuote { get;set; } = default!;
-
+        [BindProperty(SupportsGet =true)]
+        public string ? SearchString { get; set; }
+        [BindProperty(SupportsGet =true)]
+        public string ? entry { get; set; }
         public async Task OnGetAsync()
         {
-            if (_context.DeskQuote != null)
+            
+            var Deskquotes = from d in _context.DeskQuote select d;
+            if (!string.IsNullOrEmpty(SearchString))
             {
-                DeskQuote = await _context.DeskQuote.ToListAsync();
+                Deskquotes = Deskquotes.Where(s => s.CustomerName.Contains(SearchString));
             }
+            if (!string.IsNullOrEmpty(entry))
+            {
+                switch (entry)
+                {
+                    case "name":
+                        Deskquotes = Deskquotes.OrderBy(s => s.CustomerName);
+                        break;
+                    case "date":
+                        Deskquotes = Deskquotes.OrderBy(s => s.DateAdded);
+                        break;
+                }
+            }
+            DeskQuote = await Deskquotes.ToListAsync();
+        }
+
+        public void OnPost()
+        {
+
         }
     }
 }
